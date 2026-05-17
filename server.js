@@ -25,9 +25,8 @@ const app = express()
 app.use(helmet())
 app.use(hpp())
 app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: true,
+  credentials: true
 }))
 
 const limiter = rateLimit({
