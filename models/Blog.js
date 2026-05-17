@@ -10,8 +10,6 @@ const blogSchema = new mongoose.Schema(
     },
     slug: {
       type: String,
-      required: [true, 'Slug is required'],
-      unique: true,
       lowercase: true,
       trim: true,
     },
@@ -22,7 +20,6 @@ const blogSchema = new mongoose.Schema(
     },
     thumbnail: {
       type: String,
-      required: [true, 'Thumbnail is required'],
     },
     content: {
       type: String,
