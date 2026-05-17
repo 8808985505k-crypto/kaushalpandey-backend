@@ -25,8 +25,9 @@ const app = express()
 app.use(helmet())
 app.use(hpp())
 app.use(cors({
-  origin: ['https://frontend-eight-mauve-45.vercel.app', 'https://admin-panel-omega-sable.vercel.app', 'https://admin-panel-bjqgurv9y-kaushal-pandeys-projects.vercel.app', 'http://localhost:3000'],
-  credentials: true
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }))
 
 const limiter = rateLimit({
