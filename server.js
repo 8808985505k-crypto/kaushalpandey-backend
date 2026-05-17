@@ -25,7 +25,7 @@ const app = express()
 app.use(helmet())
 app.use(hpp())
 app.use(cors({
-  origin: ['https://frontend-eight-mauve-45.vercel.app', 'https://admin-panel-m28mmsx11-kaushal-pandeys-projects.vercel.app', 'http://localhost:3000'],
+  origin: ['https://frontend-eight-mauve-45.vercel.app', 'https://admin-panel-3w9emcsjz-kaushal-pandeys-projects.vercel.app', 'https://admin-panel-omega-sable.vercel.app', 'http://localhost:3000'],
   credentials: true
 }))
 
