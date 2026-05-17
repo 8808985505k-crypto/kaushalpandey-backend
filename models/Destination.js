@@ -17,19 +17,15 @@ const destinationSchema = new mongoose.Schema(
     },
     bannerImage: {
       type: String,
-      required: [true, 'Banner image is required'],
     },
     about: {
       type: String,
-      required: [true, 'About section is required'],
     },
     thumbnail: {
       type: String,
-      required: [true, 'Thumbnail is required'],
     },
     location: {
       type: String,
-      required: [true, 'Location is required'],
       trim: true,
     },
     mapCoordinates: {
