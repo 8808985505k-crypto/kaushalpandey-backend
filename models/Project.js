@@ -47,6 +47,9 @@ const projectSchema = new mongoose.Schema(
       type: String,
       match: [/^https?:\/\/.+/, 'Please enter a valid URL'],
     },
+    apk: {
+      type: String,
+    },
     screenshots: [
       {
         type: String,
