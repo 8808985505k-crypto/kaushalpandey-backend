@@ -67,7 +67,7 @@ const blogSchema = new mongoose.Schema(
 );
 
 blogSchema.index({ slug: 1 });
-blogSchema.index({ destinationSlug: 1 });
+blogSchema.index({ destinationSlug: 1, published: 1, createdAt: -1 });
 blogSchema.index({ published: 1 });
 blogSchema.index({ travelTags: 1 });
 blogSchema.index({ title: 'text', excerpt: 'text', content: 'text' });
