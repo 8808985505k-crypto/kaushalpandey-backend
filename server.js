@@ -18,6 +18,7 @@ import profileRoutes from './routes/profile.js'
 import skillRoutes from './routes/skills.js'
 import experienceRoutes from './routes/experiences.js'
 import educationRoutes from './routes/education.js'
+import betaAppRoutes from './routes/betaApps.js'
 import uploadRoutes from './routes/upload.js'
 
 const app = express()
@@ -49,6 +50,7 @@ app.use('/api/profile', profileRoutes)
 app.use('/api/skills', skillRoutes)
 app.use('/api/experiences', experienceRoutes)
 app.use('/api/education', educationRoutes)
+app.use('/api/beta-apps', betaAppRoutes)
 app.use('/api/upload', uploadRoutes)
 
 app.get('/api/health', (req, res) => {
