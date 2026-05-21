@@ -76,7 +76,7 @@ projectSchema.index({ category: 1 });
 projectSchema.index({ status: 1 });
 projectSchema.index({ title: 'text', description: 'text', shortDescription: 'text' });
 
-projectSchema.pre('save', function (next) {
+projectSchema.pre('validate', function (next) {
   if (!this.slug && this.title) {
     this.slug = this.title
       .toLowerCase()
