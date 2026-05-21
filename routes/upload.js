@@ -88,6 +88,24 @@ router.post('/document', upload.single('document'), async (req, res) => {
   }
 })
 
+router.post('/generate-signature', async (req, res) => {
+  try {
+    const { folder = 'kaushalpandey/documents' } = req.body
+    const timestamp = Math.round(Date.now() / 1000)
+    const params = { timestamp, folder }
+    const signature = cloudinary.utils.api_sign_request(params, process.env.CLOUDINARY_API_SECRET)
+    res.json({
+      signature,
+      timestamp: String(timestamp),
+      api_key: process.env.CLOUDINARY_API_KEY,
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      folder
+    })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+})
+
 router.delete('/:publicId', async (req, res) => {
   try {
     const result = await cloudinary.uploader.destroy(req.params.publicId)
