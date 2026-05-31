@@ -1,3 +1,11 @@
+process.on('uncaughtException', (err) => {
+  console.error('UNCAUGHT EXCEPTION:', err)
+})
+
+process.on('unhandledRejection', (reason) => {
+  console.error('UNHANDLED REJECTION:', reason)
+})
+
 import 'dotenv/config'
 
 import express from 'express'
@@ -86,4 +94,8 @@ const startServer = async () => {
   }
 }
 
-startServer()
+try {
+  startServer()
+} catch (err) {
+  console.error('Failed to start server:', err)
+}
