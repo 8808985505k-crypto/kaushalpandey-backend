@@ -1,11 +1,3 @@
-process.on('uncaughtException', (err) => {
-  console.error('UNCAUGHT EXCEPTION:', err)
-})
-
-process.on('unhandledRejection', (reason) => {
-  console.error('UNHANDLED REJECTION:', reason)
-})
-
 import 'dotenv/config'
 
 import express from 'express'
@@ -65,10 +57,6 @@ app.use('/api/tools', toolRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/reviews', reviewRoutes)
 
-app.get('/', (req, res) => {
-  res.json({ status: 'OK', service: 'kaushalpandey-api' })
-})
-
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() })
 })
@@ -94,8 +82,4 @@ const startServer = async () => {
   }
 }
 
-try {
-  startServer()
-} catch (err) {
-  console.error('Failed to start server:', err)
-}
+startServer()
