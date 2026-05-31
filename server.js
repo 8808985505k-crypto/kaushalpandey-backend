@@ -57,6 +57,10 @@ app.use('/api/tools', toolRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/reviews', reviewRoutes)
 
+app.get('/', (req, res) => {
+  res.json({ status: 'OK', service: 'kaushalpandey-api' })
+})
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() })
 })
