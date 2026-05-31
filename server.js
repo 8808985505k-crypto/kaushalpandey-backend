@@ -19,7 +19,9 @@ import skillRoutes from './routes/skills.js'
 import experienceRoutes from './routes/experiences.js'
 import educationRoutes from './routes/education.js'
 import betaAppRoutes from './routes/betaApps.js'
+import toolRoutes from './routes/tools.js'
 import uploadRoutes from './routes/upload.js'
+import reviewRoutes from './routes/reviews.js'
 
 const app = express()
 
@@ -51,7 +53,9 @@ app.use('/api/skills', skillRoutes)
 app.use('/api/experiences', experienceRoutes)
 app.use('/api/education', educationRoutes)
 app.use('/api/beta-apps', betaAppRoutes)
+app.use('/api/tools', toolRoutes)
 app.use('/api/upload', uploadRoutes)
+app.use('/api/reviews', reviewRoutes)
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() })
